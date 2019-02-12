@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="Images/globe_pic2_upd.png">
+
+    <title>Latitude Analysis</title>
+
+     <!-- Bootstrap core CSS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Bootstrap theme -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
+    
+    <!-- Custom styles for this template -->
+    <link href="theme.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+            
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+          data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>          
+          <a class="navbar-brand" href="index.html">
+            <!-- <span class="glyphicon glyphicon-globe siteGlyph" aria-hidden="true"></span> -->
+            <span class = 'siteTitle'>Latitude</span>
+          </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse" style ="float:right;">
+          <ul class="nav navbar-nav">
+            <!--<li class="active"><a href="#">Home</a></li>-->
+            <li class = "navLnk"><a href="Comparison.html">
+              <span class="glyphicon glyphicon-th-large navGlyph" aria-hidden="true"></span>
+              <span class ="navTxt">&nbsp;Comparison</span></a></li>
+            <li class = "navLnk"><a href="CitiesData.htm">
+                <span class="glyphicon glyphicon-list-alt navGlyph" aria-hidden="true"></span>
+              <span class ="navTxt">&nbsp;Data</span></a></li>
+            <li class="dropdown navLnk">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+              role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="glyphicon glyphicon-stats navGlyph" aria-hidden="true"></span>
+              <span class ="navTxt">&nbsp;Plots </span><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="MaxTempByLatitude.html">Max Temperature</a></li>
+                <li><a href="CloudinessByLatitude.html">Cloudiness</a></li>
+                <li><a href="HumidityByLatitude.html">Humidity</a></li>
+                <li><a href="WndSpdByLatitude.html">Wind Speed</a></li>                
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+        
+      </div>
+    </nav>
+    <!-- 
+      Main Section
+      #############################################
+     -->
+     <div class="container-fluid">
+        <div class = "row" id = "mainCnt_row">
+          <div class = "col-xs-12 col-md-7 colStyle" id = "mainCnt_col1">            
+            <div class = "row" id = "mainCnt_col1_Hdr">
+              <div class = "col-xs-12 col-md-12">
+                  <div class="page-header">
+                      <h2>Cloudiness vs. Latitude</h2>
+                    </div>
+              </div>
+            </div>
+            <div class = "row" id = "mainCnt_col1_info1">       
+                <div class = "col-xs-0 col-md-1" id = "dummyCol" style = "width:4%;"></div>      
+                <div class = "col-xs-12 col-sm-12 col-md-10 text-center">
+                    <span class = "w-75"><img src = "https://github.com/Madhuram-S/WeatherPy/blob/master/Images/Lattitude_Cloudiness.png?raw=true" 
+                    alt = "Cloudiness by Lattitude" class = "rounded" width = "70%">
+                  </span>
+                </div>
+                       
+            </div>
+            <div class = "row" id = "mainCnt_col1_info2">
+                <div class = "col-md-12">
+                   <p class= "lead text-center">
+                     <span class = "bg-warning">Latitude does not have any impact on Cloudiness</span>
+                   </p>
+                   <p>
+                      There are no singnificant trends to conclude that latitude has any impact on cloudiness in an area. 
+                      We can see two main clusters, one between 0% and 10% and other ranging from 60% to 80%
+                   </p>
+                </div>
+                
+              
+            </div>
+          </div>
+          
+          <div class="col-xs-12 col-md-4 colStyle" id = "mainCnt_col2">
+              <div class = "row" id = "mainCnt_col2_Hdr">
+                  <div class = "col-xs-12 col-md-12">
+                      <div class="page-header">
+                          <h2>Visualizations<br><small>Weather variations vs Latitude</small></h2>
+                        </div>
+                  </div>
+                </div>
+                <div class = "row" id = "mainCnt_col2_tn1">
+                  <div class = "col-xs-3 col-sm-3 col-md-6 imgTNSpec">
+                    <a href="MaxTempByLatitude.html">
+                      <img src = "https://github.com/Madhuram-S/WeatherPy/blob/master/Images/Lattitude_Temp.png?raw=true"
+                      alt = "Max Temp vs Latitude" class = "img-thumbnail imgLnkHover">
+                    </a>
+                      <span class = "figCaption">Fig 1. Max Temperature vs Latitude</span>
+                    
+                  </div>
+                  <div class = "col-xs-3 col-sm-3 col-md-6 imgTNSpec">
+                    <a href="CloudinessByLatitude.html">
+                    <img src = "https://github.com/Madhuram-S/WeatherPy/blob/master/Images/Lattitude_Cloudiness.png?raw=true"
+                      alt = "Cloudiness vs Latitude" class = "img-thumbnail imgLnkHover">
+                    </a>
+                      <span class = "figCaption">Fig 2. Cloudiness vs Latitude</span>
+                    
+                  </div>
+                <!--</div>
+                <div class = "row" id = "mainCnt_col2_tn2">-->
+                    <div class = "col-xs-3 col-sm-3 col-md-6 imgTNSpec">
+                      <a href="HumidityByLatitude.html">
+                      <img src = "https://github.com/Madhuram-S/WeatherPy/blob/master/Images/Lattitude_Humidity.png?raw=true"
+                        alt = "Humidity vs Latitude" class = "img-thumbnail imgLnkHover">
+                      </a>
+                        <span class = "figCaption">Fig 3. Humidity vs Latitude</span>
+                      
+                    </div>
+                    <div class = "col-xs-3 col-sm-3 col-md-6 imgTNSpec">
+                        <a href="WndSpdByLatitude.html">  
+                          <img src = "https://github.com/Madhuram-S/WeatherPy/blob/master/Images/Lattitude_WindSpd.png?raw=true"
+                          alt = "Wind Speed vs Latitude" class = "img-thumbnail imgLnkHover">
+                        </a>
+                          <span class = "figCaption">Fig 4. Wind Speed vs Latitude</span>
+                        
+                    </div>
+                </div>
+          </div>
+
+        </div>
+    </div>
+    <!--
+      Footer code
+      #################################################################
+    -->
+    <footer class="footerStyle" >
+        <div class="container-fluid">
+          <div class = "row">
+            <div class="col-xs-0 col-md-2"></div>
+            <div class = "col-xs-12 col-md-9 text-right">              
+              <a href="index.html" style="color:white;">
+                      <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                      <span class="border-bottom"><small>&nbsp;Home</small></span></a>
+              &nbsp;|&nbsp;
+              <a href="Comparison.html" style="color:white;">
+                  <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+                  <span class="border-bottom"><small>&nbsp;Comparison</small></span></a>
+              &nbsp;|&nbsp;
+              
+              <a href="CitiesData.htm" style="color:white;">
+                  <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
+                  <span class="border-bottom"><small>&nbsp;Data</small></span></a>
+            </div>
+            <div class="col-xs-0 col-md-1"></div>
+          </div>
+        </div>
+      </footer>
+       
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!--<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/assets/js/docs.min.js"></script>-->
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+        
+      </body>
+    </html>

@@ -7,9 +7,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="Images/favicon.ico">
+    <link rel="icon" href="Images/globe_pic2_upd.png">
 
-    <title>Latitude Analysis</title>
+    <title>Weather - Latitude Analysis</title>
 
      <!-- Bootstrap core CSS -->
     
@@ -27,23 +27,33 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
+            
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
           data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html"><span class = 'siteTitle'>Latitude</span></a>
+          </button>          
+          <a class="navbar-brand" href="index.html">
+            <!-- <span class="glyphicon glyphicon-globe siteGlyph" aria-hidden="true"></span> -->
+            <span class = 'siteTitle'>Latitude</span>
+          </a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+        <div id="navbar" class="navbar-collapse collapse" style ="float:right;">
           <ul class="nav navbar-nav">
             <!--<li class="active"><a href="#">Home</a></li>-->
-            <li><a href="Comparison.html">Comparison</a></li>
-            <li><a href="CitiesData.htm">Data</a></li>
-            <li class="dropdown">
+            <li class = "navLnk"><a href="Comparison.html">
+              <span class="glyphicon glyphicon-th-large navGlyph" aria-hidden="true"></span>
+              <span class ="navTxt">&nbsp;Comparison</span></a></li>
+            <li class = "navLnk"><a href="CitiesData.htm">
+                <span class="glyphicon glyphicon-list-alt navGlyph" aria-hidden="true"></span>
+              <span class ="navTxt">&nbsp;Data</span></a></li>
+            <li class="dropdown navLnk">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
-              role="button" aria-haspopup="true" aria-expanded="false">Plots <span class="caret"></span></a>
+              role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="glyphicon glyphicon-stats navGlyph" aria-hidden="true"></span>
+              <span class ="navTxt">&nbsp;Plots </span><span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="MaxTempByLatitude.html">Max Temperature</a></li>
                 <li><a href="CloudinessByLatitude.html">Cloudiness</a></li>
@@ -53,6 +63,7 @@
             </li>
           </ul>
         </div><!--/.nav-collapse -->
+        
       </div>
     </nav>
 
@@ -60,63 +71,68 @@
       Start Main content container
       #################################################################
     -->
-    <div class="container">
+    <div class="container-fluid">
         <div class = "row" id = "mainCnt_row">
+          <div class = "col-xs-0 col-md-1" id = "dummyCol" style = "width:4%;"></div>
           <div class = "col-xs-12 col-md-7 colStyle" id = "mainCnt_col1">
             <div class = "row" id = "mainCnt_col1_Hdr">
               <div class = "col-xs-12 col-md-12">
-                  <div class="page-header hdrStyle">
-                      <h2>Latitude Analysis Project <br><small>Lattitude vs. X</small></h2>
+                  <div class="page-header">
+                      <h2>Weather Analysis By Latitude <br>
+                        <small>Lattitude vs. X</small></h2>
                     </div>
               </div>
             </div>
-            <div class = "row" id = "mainCnt_col1_info1">
-              
-                <div class = "col-md-6">
+            <div class = "row" id = "mainCnt_col1_info">              
+              <div class = "col-xs-12 col-md-12">
+                  <div class="pull-left">
                     <img src = "https://github.com/Madhuram-S/WeatherPy/blob/master/Images/Lattitude_Temp.png?raw=true" 
-                    alt = "Max Temp by Lattitude" class = "imgSpec">
-                </div>
-                <div class = "col-md-6">
-                    The project aims to study the variations in weather based on Latitude and as we get close to equator. 
-                    a Python script is created to visualize the weather of 500+ cities across the world of varying distance from the equator. To accomplish this,
-    
-                  a simple Python library called citipy is used to sample cities
-                  the OpenWeatherMap API.
-                  The objective is to build a series of scatter plots to showcase the following relationships:
-    
-                  Temperature (F) vs. Latitude
-                  Humidity (%) vs. Latitude
-                  Cloudiness (%) vs. Latitude
-                  Wind Speed (mph) vs. Latitude
-                </div>
-              
+                    alt = "Max Temp by Lattitude" class = "imgSpec" align='left' width = "55%">
+                                      
+                    <p class = "lead">
+                        Can we prove with data it gets hotter as we come closer to Equator?
+                    </p>
+                    <p  class = "lead">
+                        <span  class = 'bg-primary'>Proving it does, is the purpose of this project.</span>
+                    </p>
+                    <p>
+                        We will use Python requests, APIs, and JSON traversals to answer this fundamental question and, 
+                        additionally explore and analyse effect of Latitude on Maximum Temperature, Humidity, Cloudiness and Wind Speed.                    
+                      
+                    </p>
+                    </div>  
+                    
+              </div>
             </div>
             <div class = "row" id = "mainCnt_col1_info2">
-              
-                
-                <div class = "col-md-6">
-                    Steps include:
-
-              Randomly select at least 500 unique (non-repeat) cities based on latitude and longitude.
-              Perform a weather check on each of the cities using a series of successive API calls.
-              create a print log of each city as it's being processed with the city number and city name.
-              Save both a CSV of all data retrieved and png images for each scatter plot.
-                </div>
-                <div class = "col-md-6">
+              <div class = "col-xs-12 col-md-12">
+                <div class = "pull-left">
                     <img src = "https://github.com/Madhuram-S/WeatherPy/blob/master/Images/SampleSpread.png?raw=true" 
-                    alt = "Latitudes Chosen" class = "imgSpec">
+                    alt = "Latitudes Chosen" class = "imgSpec" width = "55%" align = "right">
+                  <p>
+                    To accomplish this, we use Openweather API to obtain Temperature, Humidity, Cloudiness and Wind Speed for 
+                    over 500 unique cities across the world. 
+                  </p>   
+                  <p>
+                    After assembling the data, we explore and analyse the below relationships using scatter plots.
+                    <ul>
+                        <li>Temperature (F) vs. Latitude</li>
+                        <li>Humidity (%) vs. Latitude</li>
+                        <li>Cloudiness (%) vs. Latitude</li>
+                        <li>Wind Speed (mph) vs. Latitude</li>
+                    </ul>
+                  </p>
+                  <p>The results of the analysis are published in this site along with source data and generated Visualizations</p>
+                  
+                  </div>
+                </div>
                 </div>
               
-            </div>
-
-
-
-
-
-            
-          </div>
           
-          <div class="col-xs-12 col-md-4 colStyle" id = "mainCnt_col2">
+        
+          </div>
+         
+        <div class="col-xs-12 col-md-4 colStyle" id = "mainCnt_col2">
               <div class = "row" id = "mainCnt_col2_Hdr">
                   <div class = "col-xs-12 col-md-12">
                       <div class="page-header">
@@ -126,28 +142,36 @@
                 </div>
                 <div class = "row" id = "mainCnt_col2_tn1">
                   <div class = "col-xs-3 col-sm-3 col-md-6 imgTNSpec">
-                    <img src = "https://github.com/Madhuram-S/WeatherPy/blob/master/Images/Lattitude_Temp.png?raw=true"
-                      alt = "Max Temp vs Latitude" class = "img-thumbnail">
+                    <a href="MaxTempByLatitude.html">
+                      <img src = "https://github.com/Madhuram-S/WeatherPy/blob/master/Images/Lattitude_Temp.png?raw=true"
+                      alt = "Max Temp vs Latitude" class = "img-thumbnail imgLnkHover" width = "95%">
+                    </a>
                       <span class = "figCaption">Fig 1. Max Temperature vs Latitude</span>
                     
                   </div>
                   <div class = "col-xs-3 col-sm-3 col-md-6 imgTNSpec">
+                    <a href="CloudinessByLatitude.html">
                     <img src = "https://github.com/Madhuram-S/WeatherPy/blob/master/Images/Lattitude_Cloudiness.png?raw=true"
-                      alt = "Cloudiness vs Latitude" class = "img-thumbnail">
+                      alt = "Cloudiness vs Latitude" class = "img-thumbnail imgLnkHover" width = "95%">
+                    </a>
                       <span class = "figCaption">Fig 2. Cloudiness vs Latitude</span>
                     
                   </div>
                 <!--</div>
                 <div class = "row" id = "mainCnt_col2_tn2">-->
                     <div class = "col-xs-3 col-sm-3 col-md-6 imgTNSpec">
+                      <a href="HumidityByLatitude.html">
                       <img src = "https://github.com/Madhuram-S/WeatherPy/blob/master/Images/Lattitude_Humidity.png?raw=true"
-                        alt = "Humidity vs Latitude" class = "img-thumbnail">
+                        alt = "Humidity vs Latitude" class = "img-thumbnail imgLnkHover" width = "95%">
+                      </a>
                         <span class = "figCaption">Fig 3. Humidity vs Latitude</span>
                       
                     </div>
                     <div class = "col-xs-3 col-sm-3 col-md-6 imgTNSpec">
-                        <img src = "https://github.com/Madhuram-S/WeatherPy/blob/master/Images/Lattitude_WindSpd.png?raw=true"
-                          alt = "Wind Speed vs Latitude" class = "img-thumbnail">
+                        <a href="WndSpdByLatitude.html">  
+                          <img src = "https://github.com/Madhuram-S/WeatherPy/blob/master/Images/Lattitude_WindSpd.png?raw=true"
+                          alt = "Wind Speed vs Latitude" class = "img-thumbnail imgLnkHover" width = "95%">
+                        </a>
                           <span class = "figCaption">Fig 4. Wind Speed vs Latitude</span>
                         
                     </div>
@@ -160,9 +184,26 @@
       Footer code
       #################################################################
     -->
-    <footer >
-        <div class="container">
-          <p class="text-muted">Place sticky footer content here.</p>
+    <footer class="footerStyle" >
+        <div class="container-fluid">
+          <div class = "row">
+            <div class="col-xs-0 col-md-2"></div>
+            <div class = "col-xs-12 col-md-9 text-right">              
+              <a href="index.html" style="color:white;">
+                      <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                      <span class="border-bottom"><small>&nbsp;Home</small></span></a>
+              &nbsp;|&nbsp;
+              <a href="Comparison.html" style="color:white;">
+                  <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+                  <span class="border-bottom"><small>&nbsp;Comparison</small></span></a>
+              &nbsp;|&nbsp;
+              
+              <a href="CitiesData.htm" style="color:white;">
+                  <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
+                  <span class="border-bottom"><small>&nbsp;Data</small></span></a>
+            </div>
+            <div class="col-xs-0 col-md-1"></div>
+          </div>
         </div>
       </footer>
    
