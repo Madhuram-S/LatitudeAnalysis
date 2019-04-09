@@ -14,7 +14,7 @@ In building this dashboard, we'll create individual pages for each plot and a me
 
 ### Website Page organization
 
-The website must consist of 7 pages total, including:
+The website consists of 7 pages total, including:
 
 * A landing page containing:
   * An explanation of the project.
